@@ -5,7 +5,7 @@ import Homepage from './Pages/Homepage';
 import CoinPage from './Pages/CoinPage';
 import Header from './Component/Header';
 import { createTheme, ThemeProvider} from '@mui/material';
-import {makeStyles} from '@mui/material/styles';
+
 function App() {
 
   const darkTheme = createTheme({
@@ -14,28 +14,18 @@ function App() {
     }
 });
 
-  const useStyle = makeStyles(() => ({
-    App:{
-        backgroundColor: "black",
-
-    }
-}))
-
-const classes = useStyle();
-
   return (
 
-    <div className={classes.App}>
+    <div>
       <BrowserRouter>
           <Header/>
         <Routes>
           <Route exact path='/' Component={Homepage}/>
           <Route exact path='/coins/:id' Component={CoinPage}/>
-
+          
         </Routes>
       </BrowserRouter>
     </div>
-    // </ThemeProvider>
   );
 }
 
